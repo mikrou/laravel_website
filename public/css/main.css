@@ -1,0 +1,57 @@
+body {background-image: url(/images/blueCity.jpg);
+	  background-position:top center;
+	  background-repeat: no-repeat;
+	  background-size: 100% 100%;
+	  }
+html body {font-family:Helvetica, Arial, sans-serif;}
+
+
+#header {
+	background: rgba(256,256,256,0.6);
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 110px;
+	width: 100%;
+	display: block;
+}
+#header .logo{
+	text-align:center;
+	display: inline-block;
+	vertical-align: top;
+	height: 40px;
+	font-size: 32px;
+	width: 33%;
+	position:relative;
+}
+#header .logo a {
+	text-decoration: none;
+	color: black;
+}
+
+#Menu {text-decoration: none;
+		text-align: center;}
+
+#Menu li {
+	display:inline-table;
+	color:black;
+	font-size:20px;
+	font-style: bold;
+	padding: 10px 5px;
+	border-radius: 10px;
+	width:15%;
+}
+#Menu li:hover {
+	background-color: rgba(7,7,7,0.8);
+	color:white;
+	cursor: pointer;
+}
+
+.container {
+	padding-top: 200px;
+	display: block;
+	text-align: center;
+}
+
