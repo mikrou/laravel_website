@@ -26,12 +26,12 @@
         <div id="header">
             <div class="logo"><a href="/">Mikael Rouhiainen</a></div>
             <ul id="Menu">
-            <li>blog</li>
-            <li>portfolio</li>
-            <li>Tech Sites</li>
-            <li>contact</li>
+            <a href="/blog"><li>blog</li></a>
+            <a href="/portfolio"><li>portfolio</li></a>
+            <a href="/techsites"><li>Tech Sites</li></a>
+            <a href="/contact"><li>Contact</li></a>
             <?php if(!isset($_SESSION['user'])){ ?>
-                <li><a href="/login">Login</a></li>
+                <a href="/login"><li>Login</li></a>
             <?php } ?>
             </ul>
         </div>

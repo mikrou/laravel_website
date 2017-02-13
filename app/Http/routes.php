@@ -18,6 +18,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('register', function() {
+	return view('register');
+});
+
+Route::get('blog', function() {
+	return view('blog');
+});
+
+Route::get('techsites', function() {
+	return view('techsites');
+});
+
+Route::get('contact', function() {
+	return view('contact');
+});
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController'
