@@ -26,8 +26,8 @@
         <div id="header">
             <div class="logo"><a href="/">Mikael Rouhiainen</a></div>
             <ul id="Menu">
-            <a href="/blog"><li>blog</li></a>
-            <a href="/portfolio"><li>portfolio</li></a>
+            <a href="/blog"><li>Blog</li></a>
+            <a href="/portfolio"><li>Portfolio</li></a>
             <a href="/techsites"><li>Tech Sites</li></a>
             <a href="/contact"><li>Contact</li></a>
             <?php if(!isset($_SESSION['user'])){ ?>

@@ -9,7 +9,7 @@
 		<label>Password</label>
 		<input type="password" class="password" placeholder="password">
 		<button type="submit">Sign in</button>
-		<a href="/register"><button>Register</button></a>
+		<a href="/register"><button>Create a Free Account</button></a>
 	</div>
 </div>
 @endsection
