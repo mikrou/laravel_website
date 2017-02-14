@@ -6,7 +6,10 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*"
+        "laravel/framework": "5.2.*",
+        "twbs/bootstrap": "4.0.0-alpha.6",
+        "robloach/component-installer": "^0.2.3",
+        "components/bootstrap": "^3.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -45,6 +48,8 @@
         ]
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+	"component-dir": "public/assets",
+	"component-baseurl": "/assets"
     }
 }

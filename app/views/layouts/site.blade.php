@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>Mikael Rouhiainen</title>
+        <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap-theme.min.css"/>
         <link rel="stylesheet" href="/css/main.css"/>
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
         <meta charset="ISO-8859-1" />
@@ -38,5 +40,7 @@
         <div class="container">
             @yield('content')
         </div>
+        <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/assets/jquery/jquery.min.js"></script>
     </body>
 </html>
