@@ -26,6 +26,10 @@ Route::get('blog', function() {
 	return view('blog');
 });
 
+Route::get('portfolio', function() {
+	return view('portfolio');
+});
+
 Route::get('techsites', function() {
 	return view('techsites');
 });
@@ -38,3 +42,7 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController'
 ]);
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

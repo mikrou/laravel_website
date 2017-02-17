@@ -4,5 +4,4 @@
             <div class="content">
                 <div class="title">Mikael Rouhiainen, EIT</div>
             </div>
-        </div>
 @endsection
