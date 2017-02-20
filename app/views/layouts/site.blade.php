@@ -36,9 +36,13 @@
             <a href="/portfolio"><li>Portfolio</li></a>
             <a href="/techsites"><li>Tech Sites</li></a>
             <a href="/contact"><li>Contact</li></a>
-            <?php if(!isset($_SESSION['user'])){ ?>
+            <?php if(Auth::check()){ ?>
+                <a href="/profile"><li>
+                <?php echo Auth::user()->name; ?>
+                </li></a>
+            <?php } else { ?>
                 <a href="/login"><li>Login</li></a>
-            <?php } ?>
+                <?php } ?>
             </ul>
         </div>
         <div class="container">

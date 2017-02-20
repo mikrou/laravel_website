@@ -11,7 +11,7 @@
 |
 */
 Route::get('login', function() {
-	return view('login');
+	return view('auth.login');
 });
 
 Route::get('/', function () {
@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('register', function() {
-	return view('register');
+	return view('auth.register');
 });
 
 Route::get('blog', function() {
@@ -36,6 +36,10 @@ Route::get('techsites', function() {
 
 Route::get('contact', function() {
 	return view('contact');
+});
+
+Route::get('profile', function() {
+	return view('auth.profile');
 });
 
 Route::controllers([
