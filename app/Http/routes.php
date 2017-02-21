@@ -42,6 +42,10 @@ Route::get('profile', function() {
 	return view('auth.profile');
 });
 
+Route::get('password/reset', function() {
+	return view('auth.passwords.email');
+});
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController'
@@ -50,3 +54,4 @@ Route::controllers([
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
