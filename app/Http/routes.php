@@ -38,6 +38,16 @@ Route::get('password/reset', function() {
 	return view('auth.passwords.email');
 });
 
+Route::get('changepassword', 'UserController@index');
+
+Route::post('changepassword', 'UserController@change');
+
+Route::get('changeEmail', 'UserController@updateemail');
+
+Route::post('changeEmail', 'UserController@change');
+
+Route::post('removeuser', 'UserController@removeuser');
+
 Route::get('/home', 'HomeController@index');
 
 
