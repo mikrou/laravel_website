@@ -43,7 +43,7 @@ class UserController extends Controller
     protected function change(Request $request, Response $response)
     {
         $data = $request->all();
-        if(isset($data['password']){
+        if(isset($data['password'])) {
             if($data['password'] == $data['password_confirmation']){
                 $result = $request->user()->fill([
                     'password' => Hash::make($request->password)
