@@ -50,11 +50,13 @@ Route::post('removeuser', 'UserController@removeuser');
 
 Route::get('/home', 'HomeController@index');
 
-
 Route::get('blog', 'BlogController@index');
 
 Route::get('portfolio', function() {
 	return view('portfolio');
+});
+Route::get('/game', function() {
+	return view('game');
 });
 
 Route::get('techsites', function() {
