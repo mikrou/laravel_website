@@ -40,8 +40,8 @@ html body {font-family:Helvetica, Arial, sans-serif;}
 	font-size:20px;
 	font-style: bold;
 	padding: 10px 5px;
-	border-radius: 10px;
 	width:15%;
+	transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
 }
 #Menu li:hover, #Menu li a:hover{
 	background-color: rgba(7,7,7,0.8);
@@ -70,4 +70,24 @@ html body {font-family:Helvetica, Arial, sans-serif;}
 
 .forgotPassword {
 	margin-left: 8px;
+}
+.portfolioList {
+	padding: 0;
+}
+.portfolioList li {
+	display: inline-block;
+	width: 48%;
+	margin-top: 5px;
+}
+.portfolioList a {
+	text-decoration: none;
+}
+
+.pageTitle {
+	color: white;
+}
+
+.deleteUserForm {
+	width: none;
+	display:inline-block;
 }

@@ -52,11 +52,20 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('blog', 'BlogController@index');
 
+Route::get('blog/post', ['middleware' => ['auth', 'admin'], function() {
+	return view('blogform');
+}]);
+Route::post('blog/post', 'BlogController@createpost');
+
 Route::get('portfolio', function() {
 	return view('portfolio');
 });
-Route::get('/game', function() {
+Route::get('game', function() {
 	return view('game');
+});
+
+Route::get('artwork', function() {
+	return view('artwork');
 });
 
 Route::get('techsites', function() {
