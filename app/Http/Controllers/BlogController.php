@@ -38,11 +38,12 @@ class BlogController extends Controller
         $data = ['blogs' => $blogsArray];
         return view('blog', $data);
     }
-    //sort by most recently updated
-    public function sorter($a, $b){
-            return strtotime($a['updated_at']) - strtotime($b['updated_at']);
-    }
 
+    public function blogarticle($id)
+    {
+        $blog = Blog::find($id);
+        return view('blogbyid', ['blog'=> $blog]);
+    }
     /**
      * Create a new blog instance.
      *

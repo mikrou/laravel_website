@@ -50,10 +50,13 @@ html body {font-family:Helvetica, Arial, sans-serif;}
 }
 
 .container {
-	padding-top: 200px;
+	padding-top: 165px;
 	display: block;
 	text-align: center;
 	height: 70%;
+}
+.title, .description{
+	color: white;
 }
 .loginBox {
 	background: white;
@@ -90,4 +93,45 @@ html body {font-family:Helvetica, Arial, sans-serif;}
 .deleteUserForm {
 	width: none;
 	display:inline-block;
+}
+.blogContainer {
+	background: rgba(240,240,240, 0.6);
+	width: 75%;
+}
+.blog {
+	min-height: 20px;
+	width: 100%;
+	margin-bottom: 5px;
+	padding: 10px;
+	border-bottom: 1px solid gray;
+}
+.blogTitle {
+	font-size: 20px;
+}
+.blogTitle a {
+	text-decoration: none;
+	cursor:pointer;
+}
+.blog .body {
+	text-align: left;
+}
+
+#artCarousel {
+	text-align: center;
+}
+#artCarousel .carousel-indicators {
+	bottom: -125px;
+}
+#artCarousel .carousel-inner {
+	height: 75%;
+	max-height: 500px;
+	text-align: center;
+}
+#artCarousel .carousel-inner .item {
+	height:500px;
+}
+
+#artCarousel .carousel-inner img {
+	height: 100%;
+	margin: 0 auto;
 }

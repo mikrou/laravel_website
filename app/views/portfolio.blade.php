@@ -13,6 +13,7 @@
                         <a target="_blank" href="https://wildtv.ca/html5"><li class="btn btn-primary">WildTV app</li></a>
                         <a target="_blank" href="http://myhuntfix.com"><li class="btn btn-primary">MyHuntFix</li></a>
                         <a href="/artwork"><li class="btn btn-primary">My artwork</li></a>
+                        <a href="/capstone"><li class="btn btn-primary">3-wheeled robot</li></a>
                     </ul>
                 </div>
             </div>

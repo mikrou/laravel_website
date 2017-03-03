@@ -14,6 +14,9 @@
                         <label for="body">Blog body:</label>
                         <input type="text" name="body">
                         <button type="submit">Create blog post</button>
+                        <label for="imageurl">Image url (optional)</label>
+                        <input type="text" name="imageurl">
+                        <button type="submit">Create blog post</button>
                 	</form>
                     </div>
                 </div>

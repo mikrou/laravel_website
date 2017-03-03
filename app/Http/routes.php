@@ -52,6 +52,8 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('blog', 'BlogController@index');
 
+Route::get('blog/{id}', 'BlogController@blogarticle');
+
 Route::get('blog/post', ['middleware' => ['auth', 'admin'], function() {
 	return view('blogform');
 }]);
@@ -66,6 +68,10 @@ Route::get('game', function() {
 
 Route::get('artwork', function() {
 	return view('artwork');
+});
+
+Route::get('capstone', function() {
+	return view('capstone');
 });
 
 Route::get('techsites', function() {
