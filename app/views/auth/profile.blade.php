@@ -12,7 +12,7 @@
                     {{ csrf_field() }}
                     <button type='submit' class="btn btn-danger" onclick="return confirm('Are you sure you want to delete your account?')">Delete Account</button>
                     </form>
-                    <a href="/logout" class="btn btn-info">Log out</a>
+                    <a href="{{ url('/logout') }}" class="btn btn-info">Log out</a>
                 </div>
             </div>
         </div>
