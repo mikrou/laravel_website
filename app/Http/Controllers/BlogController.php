@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class BlogController extends Controller
 {
@@ -15,7 +16,6 @@ class BlogController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
     }
 
     /**
@@ -26,10 +26,24 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::all();
-        $blogsArray = ['blogs' => $blogs];
-        return view('blog', $blogsArray);
+        $blogsArray = json_decode($blogs);
+
+        //sorts the blogs by date
+        usort($blogsArray, function($a, $b) {
+            $v1 = strtotime($a->updated_at);
+            $v2 = strtotime($b->updated_at);
+            return ($v1 > $v2)? -1: 1;
+        });
+        
+        $data = ['blogs' => $blogsArray];
+        return view('blog', $data);
     }
 
+    public function blogarticle($id)
+    {
+        $blog = Blog::find($id);
+        return view('blogbyid', ['blog'=> $blog]);
+    }
     /**
      * Create a new blog instance.
      *
@@ -43,5 +57,13 @@ class BlogController extends Controller
             'small_desc' => $data['small_desc'],
             'body' => $data['body']
         ]);
+    }
+
+    public function createpost(Request $request, Response $response)
+    {
+        $this->middleware('auth');
+        $data = $request->all();
+        $this->create($data);
+        return redirect('blog');
     }
 }

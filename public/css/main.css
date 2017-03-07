@@ -40,8 +40,8 @@ html body {font-family:Helvetica, Arial, sans-serif;}
 	font-size:20px;
 	font-style: bold;
 	padding: 10px 5px;
-	border-radius: 10px;
 	width:15%;
+	transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.4s;
 }
 #Menu li:hover, #Menu li a:hover{
 	background-color: rgba(7,7,7,0.8);
@@ -50,10 +50,13 @@ html body {font-family:Helvetica, Arial, sans-serif;}
 }
 
 .container {
-	padding-top: 200px;
+	padding-top: 165px;
 	display: block;
 	text-align: center;
 	height: 70%;
+}
+.title, .description{
+	color: white;
 }
 .loginBox {
 	background: white;
@@ -70,4 +73,65 @@ html body {font-family:Helvetica, Arial, sans-serif;}
 
 .forgotPassword {
 	margin-left: 8px;
+}
+.portfolioList {
+	padding: 0;
+}
+.portfolioList li {
+	display: inline-block;
+	width: 48%;
+	margin-top: 5px;
+}
+.portfolioList a {
+	text-decoration: none;
+}
+
+.pageTitle {
+	color: white;
+}
+
+.deleteUserForm {
+	width: none;
+	display:inline-block;
+}
+.blogContainer {
+	background: rgba(240,240,240, 0.6);
+	width: 75%;
+}
+.blog {
+	min-height: 20px;
+	width: 100%;
+	margin-bottom: 5px;
+	padding: 10px;
+	border-bottom: 1px solid gray;
+}
+.blogTitle {
+	font-size: 20px;
+}
+.blogTitle a {
+	text-decoration: none;
+	cursor:pointer;
+}
+.blog .body {
+	text-align: left;
+}
+
+#artCarousel {
+	text-align: center;
+}
+#artCarousel .carousel-indicators {
+	bottom: -125px;
+}
+#artCarousel .carousel-inner {
+	height: 75%;
+	max-height: 500px;
+	text-align: center;
+}
+#artCarousel .carousel-inner .item {
+	height:500px;
+}
+
+#artCarousel .carousel-inner img {
+	height: 100%;
+	margin: 0 auto;
 }

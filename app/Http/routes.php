@@ -38,13 +38,40 @@ Route::get('password/reset', function() {
 	return view('auth.passwords.email');
 });
 
-Route::get('/home', 'HomeController@index');
+Route::get('changepassword', 'UserController@index');
 
+Route::post('changepassword', 'UserController@change');
+
+Route::get('changeEmail', 'UserController@updateemail');
+
+Route::post('changeEmail', 'UserController@change');
+
+Route::post('removeuser', 'UserController@removeuser');
+
+Route::get('/home', 'HomeController@index');
 
 Route::get('blog', 'BlogController@index');
 
+Route::get('blog/post', ['middleware' => ['auth', 'admin'], function() {
+	return view('blogform');
+}]);
+Route::post('blog/post', 'BlogController@createpost');
+
+Route::get('blog/{id}', 'BlogController@blogarticle');
+
 Route::get('portfolio', function() {
 	return view('portfolio');
+});
+Route::get('game', function() {
+	return view('game');
+});
+
+Route::get('artwork', function() {
+	return view('artwork');
+});
+
+Route::get('capstone', function() {
+	return view('capstone');
 });
 
 Route::get('techsites', function() {
