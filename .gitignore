@@ -6,4 +6,4 @@ Homestead.json
 .env
 composer-setup.php
 composer.phar
-composer.lock
+robots.txt
