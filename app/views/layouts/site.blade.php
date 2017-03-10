@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap-theme.min.css"/>
         <link rel="stylesheet" href="/css/main.css"/>
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-        
+
 
         <style>
             html, body {
@@ -30,21 +30,36 @@
     </head>
     <body>
         <div id="header">
-            <div class="logo"><a href="/">Mikael Rouhiainen</a></div>
-            <ul id="Menu">
-            <a href="/blog"><li>Blog</li></a>
-            <a href="/portfolio"><li>Portfolio</li></a>
-            <a href="/techsites"><li>Tech Sites</li></a>
-            <a href="/contact"><li>Contact</li></a>
-            <?php if(Auth::check()){ ?>
-                <a href="/profile"><li>
-                <?php echo Auth::user()->name; ?>
-                </li></a>
-            <?php } else { ?>
-                <a href="/login"><li>Login</li></a>
-                <?php } ?>
-            </ul>
-        </div>
+	    <div class="col-xs-12">
+		<nav class="navbar">
+		    <div class="container-fluid">
+                        <div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
+					<div id="mobileMenu">
+						<div class="mobileLogo">Mikael R</div>
+						<i class="burger fa fa-bars fa-2x"></i>
+					</div>
+				</button>
+		            <div class="desktopLogo"><a href="/">Mikael Rouhiainen</a></div>
+                    </div>
+			    <div class="collapse navbar-collapse" id="mainNav">
+			            <ul id="Menu" class="nav nav-pills nav-justified">
+				            <a href="/blog"><li>Blog</li></a>
+				            <a href="/portfolio"><li>Portfolio</li></a>
+				            <a href="/techsites"><li>Tech Sites</li></a>
+				            <a href="/contact"><li>Contact</li></a>
+				            <?php if(Auth::check()){ ?>
+				                <a href="/profile"><li>
+				            <?php echo Auth::user()->name; ?>
+				                </li></a>
+				            <?php } else { ?>
+				                <a href="/login"><li>Login</li></a>
+				            <?php } ?>
+				            </ul>
+			        </div>
+			</div>
+			</nav>
+			</div>
         <div class="container">
             @yield('content')
         </div>

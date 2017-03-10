@@ -17,7 +17,7 @@ html body {font-family:Helvetica, Arial, sans-serif;}
 	width: 100%;
 	display: block;
 }
-#header .logo{
+#header .desktopLogo, #header .mobileLogo {
 	text-align:center;
 	display: inline-block;
 	vertical-align: top;
@@ -26,13 +26,22 @@ html body {font-family:Helvetica, Arial, sans-serif;}
 	width: 33%;
 	position:relative;
 }
-#header .logo a {
+#header .mobileLogo {
+	width: 50%;
+}
+#header .navbar-toggle {
+	float: none;
+	width: 100%;
+}
+#header .desktopLogo a {
 	text-decoration: none;
 	color: black;
 }
 
 #Menu {text-decoration: none;
-		text-align: center;}
+		text-align: center;
+		margin-top: 25px;
+}
 
 #Menu li {
 	display:inline-table;
@@ -134,4 +143,24 @@ html body {font-family:Helvetica, Arial, sans-serif;}
 #artCarousel .carousel-inner img {
 	height: 100%;
 	margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+	#mobileMenu {
+		display: none;
+	}
+}
+@media (max-width: 767px) {
+	#header .desktopLogo {
+		display: none;
+	}
+	#header button i {
+		line-height: 46px;
+	}
+	#header #mainNav {
+		background: rgba(230,230,230, 0.5);
+		margin-top: 28px;
+		position:relative;
+		z-index: 10;
+	}
 }
