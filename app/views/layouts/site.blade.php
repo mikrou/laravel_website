@@ -9,37 +9,32 @@
         <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap-theme.min.css"/>
         <link rel="stylesheet" href="/css/main.css"/>
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-
+        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css"/>
         <style>
             html, body {
                 height: 100%;
             }
-
-
             .content {
                 text-align: center;
                 display: inline-block;
             }
-
         </style>
     </head>
     <body>
         <div id="header">
-	    <div class="col-xs-12">
-		<nav class="navbar">
-		    <div class="container-fluid">
+            <div class="col-xs-12">
+                <nav class="navbar">
+                    <div class="container-fluid">
                         <div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
-					<div id="mobileMenu">
-						<div class="mobileLogo">Mikael R</div>
-						<i class="burger fa fa-bars fa-2x"></i>
-					</div>
-				</button>
-		            <div class="desktopLogo"><a href="/">Mikael Rouhiainen</a></div>
-                    </div>
-			    <div class="collapse navbar-collapse" id="mainNav">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
+                                <div id="mobileMenu">
+                                    <div class="mobileLogo">Mikael R</div>
+                                    <i class="burger fa fa-bars fa-2x"></i>
+                                </div>
+                            </button>
+                            <div class="desktopLogo"><a href="/">Mikael Rouhiainen</a></div>
+                        </div>
+                        <div class="collapse navbar-collapse" id="mainNav">
 			            <ul id="Menu" class="nav nav-pills nav-justified">
 				            <a href="/blog"><li>Blog</li></a>
 				            <a href="/portfolio"><li>Portfolio</li></a>
@@ -52,11 +47,12 @@
 				            <?php } else { ?>
 				                <a href="/login"><li>Login</li></a>
 				            <?php } ?>
-				            </ul>
-			        </div>
+                        </ul>
+                        </div>
+                    </div>
+                </nav>
 			</div>
-			</nav>
-			</div>
+        </div>
         <div class="container">
             @yield('content')
         </div>
