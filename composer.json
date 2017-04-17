@@ -9,7 +9,10 @@
         "laravel/framework": "5.2.*",
         "twbs/bootstrap": "4.0.0-alpha.6",
         "robloach/component-installer": "^0.2.3",
-        "components/bootstrap": "^3.3"
+        "components/bootstrap": "^3.3",
+        "mailgun/mailgun-php": "^2.3",
+        "php-http/guzzle6-adapter": "^1.1",
+        "php-http/message": "^1.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
