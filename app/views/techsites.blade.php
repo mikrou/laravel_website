@@ -14,6 +14,8 @@
 				<a target="_blank" href="https://news.ycombinator.com/">Hacker News</a>
 				<p>Hacker News is a less flashy news site for nerds. It's not always computer-related; posts 
 				can vary from new software, to new discoveries in the world of physics or space.</p>
+				<a target="_blank" href="https://ca.pcpartpicker.com/">PCPartPicker.com</a>
+				<p>A site that allows you to compare and order computer parts from multiple vendors. Great site to estimate a custom PC budget</p>
 			</div>
 		</div>
 	</div>
