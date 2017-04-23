@@ -14,11 +14,11 @@
                 	</div>
                 <div class="form-group">
                     <label for="small_desc" class="col-md-2 control-label">Subject:</label>
-                    <input type="text" name="small_desc" class="col-md-8">
+                    <input type="text" name="subject" class="col-md-8" placeholder="(optional)">
                 </div>
                 <div class="form-group">
                     <label for="body" class="col-md-2 control-label">Message:</label>
-                    <textarea type="text" name="body" class="col-md-9" rows="18" required></textarea>
+                    <textarea type="text" name="body" class="col-md-9" rows="10" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-info">Send</button>
 				</form>
