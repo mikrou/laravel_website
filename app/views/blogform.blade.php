@@ -23,7 +23,7 @@
                     <label for="imageurl" class="col-md-2 control-label">Image url (optional):</label>
                     <input type="text" name="imageurl" class="col-md-8">
                 </div>
-                <button type="submit">Create blog post</button>
+                <button type="submit" class="btn btn-info">Create blog post</button>
             </form>
         </div>
     </div>
