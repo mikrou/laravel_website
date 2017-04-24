@@ -38,7 +38,7 @@ class HomeController extends Controller
         $data = $request->all();
         $secret = env('MAILGUN_SECRET');
         $mgClient = new Mailgun($secret);
-        $domain = env('MAIL_HOST');
+        $domain = env('MAILGUN_DOMAIN');
         $result = $mgClient->sendMessage($domain, array(
                 'from' => 'Site User <'.$data['email'].'>',
                 'to' => 'Me <'. env('DEFAULT_MAIL_TO') .'>',
