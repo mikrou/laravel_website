@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-require('../vendor/autoload.php');
+require '../vendor/autoload.php';
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -47,7 +47,8 @@ class HomeController extends Controller
             ));
         if($result->http_response_code == 200){
             return redirect('/');
+        } else {
+            return redirect('/contact');
         }
-        return redirect('/contact');
     }
 }
