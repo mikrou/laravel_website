@@ -82,5 +82,7 @@ Route::get('contact', function() {
 	return view('contact');
 });
 
+Route::post('contact', 'HomeController@submitContactForm');
+
 
 
