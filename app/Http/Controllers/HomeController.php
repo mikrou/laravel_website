@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-require('../vendor/autoload.php');
+require '../vendor/autoload.php';
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -46,8 +46,9 @@ class HomeController extends Controller
                 'text' => $data['body']
             ));
         if($result->http_response_code == 200){
-            return redirect('/');
+            return redirect->back()->with('message', 'Successfully sent message!');
+        } else {
+            return redirect->back()->with('message', 'Failed to send message. Please try again later.');
         }
-        return redirect('/contact', ['error']);
     }
 }
