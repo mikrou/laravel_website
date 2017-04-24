@@ -46,9 +46,9 @@ class HomeController extends Controller
                 'text' => $data['body']
             ));
         if($result->http_response_code == 200){
-            return redirect->back()->with('message', 'Successfully sent message!');
+            return redirect('/');
         } else {
-            return redirect->back()->with('message', 'Failed to send message. Please try again later.');
+            return redirect('/contact');
         }
     }
 }
