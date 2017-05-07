@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-require('../vendor/autoload.php');
+require '../vendor/autoload.php';
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -38,7 +38,7 @@ class HomeController extends Controller
         $data = $request->all();
         $secret = env('MAILGUN_SECRET');
         $mgClient = new Mailgun($secret);
-        $domain = env('MAIL_HOST');
+        $domain = env('MAILGUN_DOMAIN');
         $result = $mgClient->sendMessage($domain, array(
                 'from' => 'Site User <'.$data['email'].'>',
                 'to' => 'Me <'. env('DEFAULT_MAIL_TO') .'>',
@@ -47,7 +47,8 @@ class HomeController extends Controller
             ));
         if($result->http_response_code == 200){
             return redirect('/');
+        } else {
+            return redirect('/contact');
         }
-        return redirect('/contact', ['error']);
     }
 }

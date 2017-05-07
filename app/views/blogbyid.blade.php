@@ -10,7 +10,18 @@
                         <img src="<?php echo $blogs[$i]->imageurl; ?>">
                         <?php } ?>
                 		<div class="blogTitle"><?php echo $blog->small_desc; ?></div>
-                		<div class="body"><?php echo $blog->body; ?></div>
+                		<div class="body"><?php 
+                        $paragraphs = explode("\n", $blog->body);
+                        foreach($paragraphs as $paragraph){
+                        ?>
+                            <p><?php
+                                echo $paragraph;
+                            ?>
+                            </p>
+                        <?php 
+                        }
+                        ?>
+                        </div>
                         
                 	</div>
                 </div>
