@@ -8,6 +8,7 @@
 				<!-- <div class="panel-body email">You can contact me at <a href="mailto:mrouhiai@ualberta.ca">mrouhiai@ualberta.ca</a>. I am currently working on building a mail server, so an easy-to-use contact form will be coming soon!</div> -->
 				<div class="panel-body">
 				<form method="POST" class="form-horizontal">
+				{{ csrf_field() }}
 					<div class="form-group">
                    		<label for="email" class=" col-md-2 control-label">Email:</label>
                     	<input type="email" name="email" class="col-md-4" required>
