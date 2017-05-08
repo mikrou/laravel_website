@@ -42,7 +42,9 @@ class BlogController extends Controller
     public function blogarticle($id)
     {
         $blog = Blog::find($id);
-        return view('blogbyid', ['blog'=> $blog]);
+        if($blog){
+            return view('blogbyid', ['blog'=> $blog]);
+        }
     }
     /**
      * Create a new blog instance.

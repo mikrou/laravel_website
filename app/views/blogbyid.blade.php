@@ -7,7 +7,7 @@
                 <div class="blogContainer">
                 	<div class="blog">
                         <?php if(isset($blog->imageurl)){ ?>
-                        <img src="<?php echo $blogs[$i]->imageurl; ?>">
+                        <img src="<?php echo $blog->imageurl; ?>">
                         <?php } ?>
                 		<div class="blogTitle"><?php echo $blog->small_desc; ?></div>
                 		<div class="body"><?php 
