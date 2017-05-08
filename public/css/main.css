@@ -73,6 +73,7 @@ html body {font-family:Helvetica, Arial, sans-serif;}
 .description {
 	background: rgba(240,240,240,0.6);
 	color: black;
+	text-align:left;
 }
 .loginBox {
 	background: white;
@@ -118,7 +119,8 @@ html body {font-family:Helvetica, Arial, sans-serif;}
 	color: black;
 }
 .blog {
-	min-height: 20px;
+	min-height: 120px;
+	position:relative;
 	width: 100%;
 	margin-bottom: 5px;
 	padding: 10px;
@@ -133,6 +135,17 @@ html body {font-family:Helvetica, Arial, sans-serif;}
 }
 .blog .body {
 	text-align: left;
+}
+.blog img {
+	float: left;
+	margin-right: 10px;
+}
+.blog .postDate {
+	text-align:right;
+	position:absolute;
+	bottom: 0;
+	display:block;
+	width: 96%;
 }
 
 #artCarousel {

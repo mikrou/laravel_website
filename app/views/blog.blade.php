@@ -19,14 +19,16 @@
                 	This will get updated regularly, so check back soon!</p>
                 <?php
                 } else { 
-                	for($i=0; $i< count($blogs); $i++){ 
+                	foreach($blogs as $blog){ 
                 ?>
                 	<div class="blog">
-                		<div class="blogTitle"><a href="blog/<?php echo $blogs[$i]->id; ?>"><?php echo $blogs[$i]->title; ?></a></div>
-                		<div class="description"><?php echo $blogs[$i]->small_desc; ?></div>
-                        <?php if(isset($blogs[$i]->imageurl)){ ?>
-                        <img src="<?php echo $blogs[$i]->imageurl; ?>">
+                		<div class="blogTitle"><a href="blog/<?php echo $blog->id; ?>"><?php echo $blog->title; ?></a>
+                        </div>
+                        <?php if(isset($blog->imageurl)){ ?>
+                        <img src="<?php echo $blog->imageurl; ?>">
                         <?php } ?>
+                		<div class="description"><?php echo $blog->small_desc; ?></div>
+                        <div class="postDate">Posted: <?php echo $blog->updated_at; ?></div>
                 	</div>
                 	<?php 
                 	}
