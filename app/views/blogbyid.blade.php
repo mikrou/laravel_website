@@ -1,6 +1,15 @@
 @extends('layouts.site')
 
 @section('content')
+<?php
+if(Auth::user() && Auth::user()->isAdmin()) {
+?>
+    <a href="/blog/<?php echo $blog->id;?>/edit" class="btn btn-primary">Edit</a>
+    <a href="/blog/<?php echo $blog->id;?>/remove" onclick="confirm('Are you sure you want to delete this post?')" class="btn btn-primary">Delete</a>
+
+<?php
+}
+?>
             <div class="row">
             	<div class="col-md-12">
                 <h1 class="pageTitle" style="text-align:left;"><?php echo $blog->title; ?></h1>
@@ -10,7 +19,7 @@
                         <img src="<?php echo $blog->imageurl; ?>">
                         <?php } ?>
                 		<div class="blogTitle"><?php echo $blog->small_desc; ?></div>
-                		<div class="body"><?php 
+                		<div class="body"><?php
                         $paragraphs = explode("\n", $blog->body);
                         foreach($paragraphs as $paragraph){
                         ?>
@@ -18,11 +27,11 @@
                                 echo $paragraph;
                             ?>
                             </p>
-                        <?php 
+                        <?php
                         }
                         ?>
                         </div>
-                        
+
                 	</div>
                 </div>
             </div>

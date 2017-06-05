@@ -34,7 +34,7 @@ class BlogController extends Controller
             $v2 = strtotime($b->updated_at);
             return ($v1 > $v2)? -1: 1;
         });
-        
+
         $data = ['blogs' => $blogsArray];
         return view('blog', $data);
     }
@@ -67,5 +67,32 @@ class BlogController extends Controller
         $data = $request->all();
         $this->create($data);
         return redirect('blog');
+    }
+
+    public function editArticle($id)
+    {
+        $this->middleware('auth');
+        $blog = Blog::find($id);
+        return view('blogform', ['blog'=> $blog]);
+    }
+
+    public function updateArticle(Request $request, Response $response, $id)
+    {
+      $this->middleware('auth');
+      $blog = Blog::find($id);
+      $data = $request->all();
+      $columns = ['title', 'small_desc', 'body', 'imageurl'];
+      foreach($columns as $column){
+        $blog[$column] = $data[$column];
+      }
+      $blog->save();
+      return view('blogbyid', ['blog' => $blog]);
+
+    }
+
+    public function deleteArticle($id){
+      $blog = Blog::find($id);
+      $blog->delete();
+      return redirect('blog');
     }
 }
