@@ -58,7 +58,9 @@ Route::get('blog/post', ['middleware' => ['auth', 'admin'], function() {
 Route::post('blog/post', 'BlogController@createpost');
 
 Route::get('blog/{id}', 'BlogController@blogarticle');
-
+Route::get('blog/{id}/edit', 'BlogController@editArticle');
+Route::post('blog/{id}/edit', 'BlogController@updateArticle');
+Route::get('blog/{id}/remove', 'BlogController@deleteArticle');
 Route::get('portfolio', function() {
 	return view('portfolio');
 });
@@ -83,6 +85,3 @@ Route::get('contact', function() {
 });
 
 Route::post('contact', 'HomeController@submitContactForm');
-
-
-
