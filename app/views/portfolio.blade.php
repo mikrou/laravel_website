@@ -11,6 +11,7 @@
                         <a href="game"><li class="btn btn-primary">Cannon Climb</li></a>
                         <li class="btn btn-primary" onclick="run();">Rock Paper Scissors Lizard Spock</li>
                         <a target="_blank" href="https://wildtv.ca/html5"><li class="btn btn-primary">WildTV app</li></a>
+                        <a target="_blank" href="https://myhuntfix.com"><li class="btn btn-primary">MyHuntFix</li></a>
                         <a href="/artwork"><li class="btn btn-primary">My artwork</li></a>
                         <a href="/capstone"><li class="btn btn-primary">3-wheeled robot</li></a>
                     </ul>
