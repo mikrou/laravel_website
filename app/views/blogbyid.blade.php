@@ -1,14 +1,4 @@
 @extends('layouts.site')
-<script>
-  function confirmDelete() {
-    var x = confirm('Are you sure you want to delete this post?');
-    if(x){
-      return true;
-    } else {
-      return false;
-    }
-  }
-</script>
 @section('content')
 <?php
 if(Auth::user() && Auth::user()->isAdmin()) {
