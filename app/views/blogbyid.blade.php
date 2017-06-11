@@ -1,11 +1,22 @@
 @extends('layouts.site')
-
+<script>
+  function confirmDelete() {
+    var x = confirm('Are you sure you want to delete this post?');
+    if(x){
+      return true;
+    } else {
+      return false;
+    }
+  }
+</script>
 @section('content')
 <?php
 if(Auth::user() && Auth::user()->isAdmin()) {
 ?>
     <a href="/blog/<?php echo $blog->id;?>/edit" class="btn btn-primary">Edit</a>
-    <a href="/blog/<?php echo $blog->id;?>/remove" onclick="confirm('Are you sure you want to delete this post?')" class="btn btn-primary">Delete</a>
+    <form class="deletePostForm" action="/blog/<?php echo $blog->id;?>/remove" method="get" onsubmit="return confirm('Are you sure you want to delete this post?')">
+      <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
 
 <?php
 }
