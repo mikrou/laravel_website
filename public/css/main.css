@@ -16,6 +16,7 @@ html body {font-family:Helvetica, Arial, sans-serif;}
 	height: 110px;
 	width: 100%;
 	display: block;
+	z-index: 1;
 }
 #header .desktopLogo, #header .mobileLogo {
 	text-align:center;
