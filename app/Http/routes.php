@@ -85,3 +85,7 @@ Route::get('contact', function() {
 });
 
 Route::post('contact', 'HomeController@submitContactForm');
+
+Route::get('/control-panel', ['middleware' => ['role:admin']], 'AdminController@index');
+
+Route::get('/create-roles', 'AdminController@createRoles');

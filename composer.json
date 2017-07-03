@@ -14,7 +14,7 @@
         "php-http/guzzle6-adapter": "^1.1",
         "php-http/message": "^1.5",
         "doctrine/dbal": "^2.5",
-	"zizaco/entrust": "5.2.x-dev"
+	      "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
