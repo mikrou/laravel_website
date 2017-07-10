@@ -9,9 +9,11 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
 
 class AdminController extends Controller
 {
+  use EntrustUserTrait;
   /**
    * Create a new controller instance.
    *
@@ -36,69 +38,35 @@ class AdminController extends Controller
     */
     public function createRoles()
     {
-      $admin = new Role();
-      $admin->name = 'siteadmin';
-      $admin->display_name = 'Site Administrator';
-      $admin->description = 'User can control all aspects of the site';
-      $admin->save();
+      $admin = Role::where('name', '=', 'siteadmin')->first();
+      $blogger = Role::where('name', '=', 'blogger')->first();
+      $commenter = Role::where('name', '=', 'commenter')->first();
+      $guest = Role::where('name', '=', 'guest')->first();
 
-      $blogger = new Role();
-      $blogger->name = 'blogger';
-      $blogger->display_name = 'Blog writer';
-      $blogger->description = 'User can post, edit, and delete blogs';
-      $blogger->save();
-
-      $commenter = new Role();
-      $commenter->name = 'commenter';
-      $commenter->display_name = 'blog commenter';
-      $commenter->description = 'User may like, dislike, or comment on posts';
-      $commenter->save();
-
-      $guest = new Role();
-      $guest->name = 'guest';
-      $guest->display_name = 'guest';
-      $guest->description = 'User may like, and dislike posts';
-      $guest->save();
-
-      $user = User::where('email', '=', 'mrouhiai@gmail.com')->first();
-      $user->attachRole($admin);
+      // $user = User::where('email', '=', 'mrouhiai@gmail.com')->first();
+      // $user->attachRole($admin);
 
       $this->createPermissions($admin, $blogger, $commenter, $guest);
     }
     private function createPermissions($admin, $blogger, $commenter, $guest)
     {
       //permission to create posts
-      $createPost = new Permission();
-      $createPost->name = 'create-post';
-      $createPost->description = 'allow a user to create new blog posts';
-      $createPost->save();
+      $createPost = Permission::where('name', '=', 'create-post')->first();
 
       //permission to edit posts
-      $editPost = new Permission();
-      $editPost->name = 'edit-post';
-      $editPost->description = 'allow a user to edit blog posts';
-      $editPost->save();
+      $editPost = Permission::where('name', '=', 'edit-post')->first();
 
       //permission to delete posts
-      $deletePost = new Permission();
-      $deletePost->name = 'delete-post';
-      $deletePost->description = 'allow a user to delete blog posts';
-      $deletePost->save();
+      $deletePost = Permission::where('name', '=', 'delete-post')->first();
 
       //permission to comment on posts
-      $commentPost = new Permission();
-      $commentPost->name = 'comment-post';
-      $commentPost->description = 'allow a user to comment on blog posts';
-      $deletePost->save();
+      $commentPost = Permission::where('name', '=', 'comment-post')->first();
 
       //permission to give post feedback (like/dislike)
-      $feedbackPost = new Permission();
-      $feedbackPost->name = 'feedback-post';
-      $feedbackPost->description = 'allow a user to like or dislike posts';
-      $feedbackPost->save();
+      $feedbackPost = Permission::where('name', '=', 'feedback-post')->first();
 
-      $blogger->attachPermissions(array($createPost, $editPost, $deletePost));
+      // $blogger->attachPermissions(array($createPost, $editPost, $deletePost));
       $commenter->attachPermissions(array($commentPost, $feedbackPost));
-      $guest->attachPermission($feedbackPost);
+      // $guest->attachPermission($feedbackPost);
     }
 }
