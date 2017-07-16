@@ -6,17 +6,19 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Foundation\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
 
 class User extends Authenticatable implements AuthenticatableContract,
                                             CanResetPasswordContract
 {
+    use EntrustUserTrait;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'admin'
+        'name', 'email', 'password'
     ];
 
     /**
@@ -27,10 +29,5 @@ class User extends Authenticatable implements AuthenticatableContract,
     protected $hidden = [
         'password', 'remember_token'
     ];
-
-    public function isAdmin()
-    {
-        return $this->admin;
-    }
 
 }
