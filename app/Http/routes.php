@@ -56,7 +56,7 @@ Route::get('blog', 'BlogController@index');
 Route::get('blog/post', ['middleware' => ['auth', 'admin'], function() {
 	return view('blogform');
 }]);
-Route::post('blog/post', 'BlogController@createpost');
+Route::post('blog/post', 'BlogController@store');
 
 Route::get('blog/{id}', 'BlogController@blogarticle');
 Route::get('blog/{id}/edit', 'BlogController@editArticle');
