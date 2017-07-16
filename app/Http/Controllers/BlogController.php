@@ -57,11 +57,12 @@ class BlogController extends Controller
         return Blog::create([
             'title' => $data['title'],
             'small_desc' => $data['small_desc'],
-            'body' => $data['body']
+            'body' => $data['body'],
+            'imageurl' => $data['imageurl']
         ]);
     }
 
-    public function createpost(Request $request, Response $response)
+    public function store(Request $request, Response $response)
     {
         $this->middleware('auth');
         $data = $request->all();
