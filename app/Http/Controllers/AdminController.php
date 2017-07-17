@@ -119,7 +119,7 @@ class AdminController extends Controller
         $feedbackPost->display_name = "Feedback Post";
         $feedbackPost->save();
       }
-        $blogger->attachPermissions(array($createPost, $editPost, $deletePost))
+        $blogger->attachPermissions(array($createPost, $editPost, $deletePost));
       // if(!$commenter->can('comment-post')){
         $commenter->attachPermissions(array($commentPost, $feedbackPost));
       // }

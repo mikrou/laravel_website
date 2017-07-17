@@ -1,7 +1,7 @@
 @extends('layouts.site')
 @section('content')
 <?php
-if(Auth::user() && Auth::user()->isAdmin()) {
+if(Auth::user() && Auth::user()->hasRole('siteadmin')) {
 ?>
     <a href="/blog/<?php echo $blog->id;?>/edit" class="btn btn-primary">Edit</a>
     <form class="deletePostForm" action="/blog/<?php echo $blog->id;?>/remove" method="get" onsubmit="return confirm('Are you sure you want to delete this post?')">
