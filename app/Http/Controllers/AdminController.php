@@ -30,7 +30,9 @@ class AdminController extends Controller
    */
    public function index()
    {
-
+     $users = User::all();
+    //  $userArray = json_decode($users);
+      return view('auth.controlpanel', ['users' =>$users]);
    }
 
    /**
