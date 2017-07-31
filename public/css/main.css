@@ -140,6 +140,7 @@ html body {font-family:Helvetica, Arial, sans-serif;}
 .blog img {
 	float: left;
 	margin-right: 10px;
+	max-width: 100%;
 }
 .blog .postDate {
 	text-align:right;

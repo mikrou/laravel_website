@@ -5,7 +5,7 @@
    	<div class="col-md-12">
         <h1 class="pageTitle" style="text-align:left;"><?php echo (isset($blog))? 'Edit':'Create';?> a blog post:</h1>
         <div class="panel panel-default">
-            <form class="blogpost form-horizontal" role="form" method="POST" action="/blog/post">
+            <form class="blogpost form-horizontal" role="form" method="POST" action="<?php echo (isset($blog))? '/blog/' . $blog->id :'/blog';?>">
             {{ csrf_field() }}
                 <div class="form-group">
                     <label for="title" class=" col-md-2 control-label">Title:</label>

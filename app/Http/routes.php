@@ -52,15 +52,16 @@ Route::post('removeuser', 'UserController@removeuser');
 Route::get('/home', 'HomeController@index');
 
 Route::get('blog', 'BlogController@index');
+Route::post('blog', 'BlogController@store');
 
 Route::get('blog/post', ['middleware' => ['auth', 'admin'], function() {
 	return view('blogform');
 }]);
-Route::post('blog/post', 'BlogController@store');
+
 
 Route::get('blog/{id}', 'BlogController@blogarticle');
 Route::get('blog/{id}/edit', 'BlogController@editArticle');
-Route::post('blog/{id}/edit', 'BlogController@updateArticle');
+Route::post('blog/{id}', 'BlogController@updateArticle');
 Route::get('blog/{id}/remove', 'BlogController@deleteArticle');
 Route::get('portfolio', function() {
 	return view('portfolio');
