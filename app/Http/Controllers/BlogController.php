@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Blog;
+use App\Likes;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -35,7 +36,9 @@ class BlogController extends Controller
     public function blogarticle($id)
     {
         $blog = Blog::find($id);
+        $likes = Likes::where('blog_id', '=', $id);
         if($blog){
+          $blog->likes = $likes;
             return view('blogbyid', ['blog'=> $blog]);
         }
     }
