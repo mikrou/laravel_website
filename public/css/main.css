@@ -1,8 +1,9 @@
-body {background-image: url(/images/blueCity.jpg);
+.non-scroll-body {background-image: url(/images/blueCity.jpg);
 	  background-position:top center;
 	  background-repeat: no-repeat;
 	  background-size: 100%;
 	  }
+.scroll-body {background: #09091d;}
 html body {font-family:Helvetica, Arial, sans-serif;}
 
 

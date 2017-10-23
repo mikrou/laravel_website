@@ -51,7 +51,7 @@ Route::post('removeuser', 'UserController@removeuser');
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('blog', 'BlogController@index');
+Route::get('blog', 'BlogController@index')->name('blog');
 Route::post('blog', 'BlogController@store');
 
 Route::get('blog/post', ['middleware' => ['auth', 'admin'], function() {
@@ -59,7 +59,7 @@ Route::get('blog/post', ['middleware' => ['auth', 'admin'], function() {
 }]);
 
 
-Route::get('blog/{id}', 'BlogController@blogarticle');
+Route::get('blog/{id}', 'BlogController@blogarticle')->name('blogpost');
 Route::get('blog/{id}/edit', 'BlogController@editArticle');
 Route::post('blog/{id}', 'BlogController@updateArticle');
 Route::get('blog/{id}/remove', 'BlogController@deleteArticle');

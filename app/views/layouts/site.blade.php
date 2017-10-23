@@ -20,7 +20,13 @@
             }
         </style>
     </head>
-    <body>
+    <?php
+    if(Route::current()->getName() == 'blog' || Route::current()->getName() == 'blogpost') { ?>
+      <body class="scroll-body">
+      <?php  } else { ?>
+        <body class="non-scroll-body">
+          <span><?php echo Route::current()->getName(); ?></span>
+          <?php } ?>
         <div id="header">
             <div class="col-xs-12">
                 <nav class="navbar">
