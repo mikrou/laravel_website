@@ -25,15 +25,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
+        $blogs = Blog::all()->sortByDesc('updated_at');
         $blogsArray = json_decode($blogs);
-
-        //sorts the blogs by date
-        usort($blogsArray, function($a, $b) {
-            $v1 = strtotime($a->updated_at);
-            $v2 = strtotime($b->updated_at);
-            return ($v1 > $v2)? -1: 1;
-        });
 
         $data = ['blogs' => $blogsArray];
         return view('blog', $data);
