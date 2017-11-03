@@ -7,17 +7,19 @@ use App\Blog;
 use App\Likes;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Http\Controllers\LikeController;
 
 class BlogController extends Controller
 {
+	private $likeController;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-    }
+    public function __construct(LikeController $likeController) {
+		$this->likeController = $likeController;
+	}
 
     /**
      * Show the application dashboard.
@@ -36,7 +38,7 @@ class BlogController extends Controller
     public function blogarticle($id)
     {
         $blog = Blog::find($id);
-        $likes = Likes::where('blog_id', '=', $id);
+        $likes = $this->likeController->getLikes($id, 'blog');
         if($blog){
           $blog->likes = $likes;
             return view('blogbyid', ['blog'=> $blog]);
